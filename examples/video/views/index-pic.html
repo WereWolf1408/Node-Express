@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Image Example</title>
+  <style>
+    /* Define styles for light and dark themes */
+    body.light {
+      background-color: #f4f4f4;
+    }
+    body.dark {
+      background-color: #212121;
+    }
+
+    #themeImage {
+      height: 400px;
+      width: 600px;
+    }
+  </style>
+</head>
+<body class="light">
+  <button onclick="switchTheme()">Switch Theme</button>
+  <img id="themeImage" src="" alt="Theme Image">
+
+  <script>
+    const themeImage = document.getElementById('themeImage');
+    const body = document.body;
+
+    // Function to switch image and theme
+    const switchTheme = () => {
+      if (body.classList.contains('light')) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+        themeImage.src = 'fantasy50.png';
+      } else {
+        body.classList.remove('dark');
+        body.classList.add('light');
+        themeImage.src = 'fantasy55.png';
+      }
+    };
+
+    // Initialize with light theme and light image
+    themeImage.src = 'fantasy50.png';
+
+    // Example usage: Switch to dark mode and dark image
+    switchTheme();
+  </script>
+</body>
+</html>

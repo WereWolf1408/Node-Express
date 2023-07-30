@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme-based Video Switching</title>
+  <style>
+    body {
+      background-color: #fff; /* Default light mode background color */
+    }
+    .dark-mode {
+      background-color: #000; /* Dark mode background color */
+    }
+  </style>
+</head>
+<body>
+  <button id="themeSwitchButton">Switch Theme</button>
+  <video id="myVideo" controls>
+    <!-- Light mode video -->
+    <source id="lightVideoSource" src="MARION - Another Day - ChillStep.mp4" type="video/mp4">
+    <!-- Dark mode video -->
+    <source id="darkVideoSource" src="MARION - Talking to the Moon.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const themeSwitchButton = document.getElementById('themeSwitchButton');
+    const myVideo = document.getElementById('myVideo');
+    const lightVideoSource = document.getElementById('lightVideoSource');
+    const darkVideoSource = document.getElementById('darkVideoSource');
+
+    // Add event listener to the theme switch button
+    themeSwitchButton.addEventListener('click', () => {
+      // Toggle the dark mode class on the body element
+      document.body.classList.toggle('dark-mode');
+
+      // Check the current theme and switch the video source accordingly
+      if (document.body.classList.contains('dark-mode')) {
+        // Switch to dark mode video
+        myVideo.src = darkVideoSource.src;
+      } else {
+        // Switch to light mode video
+        myVideo.src = lightVideoSource.src;
+      }
+
+      // Reload the video to start playback from the beginning
+      myVideo.load();
+      myVideo.play();
+    });
+  </script>
+</body>
+</html>
