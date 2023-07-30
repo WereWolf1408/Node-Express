@@ -80,8 +80,7 @@ const addNewUser = (id, name, age, email) => {
   };
 };
 
-const deleteUser = (req, res) => {
-  const { userId } = req.body;
+const deleteUser = (userId) => {
   let deletedUser = null;
 
   users = users.filter((user) => {
@@ -92,13 +91,7 @@ const deleteUser = (req, res) => {
     return false;
   });
 
-  if (deletedUser === null) {
-    res.status(400).send({
-      message: `There is no User with such id = ${userId}`,
-    });
-  }
-
-  res.send({ message: "User deleted successfully" });
+  return deletedUser;
 };
 
 module.exports = {

@@ -18,12 +18,3 @@ fs.readFile(filePath, "utf8", (err, data) => {
 });
 
 
-gulp.task('compile-js', function() {
-  return gulp.src(src)
-  .pipe('*');
-  .pipe(concat('compiled-landing-page-components-redesign.js'))
-  .pipe(babel({
-      'presets': [es2015],
-  }))
-  .pipe(gulp.dest(compilePath));
-});

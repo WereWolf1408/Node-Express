@@ -4,7 +4,7 @@ const path = require("path");
 const getAllVideos = function (req, res) {
   console.log("gggg");
 
-  const videosPath = path.join(__dirname, "..", "assets", "videos");
+  const videosPath = path.join(__dirname, "..", '..', "assets", "videos");
   console.log(videosPath);
   fs.readdir(videosPath, function (err, files) {
     if (err) {
