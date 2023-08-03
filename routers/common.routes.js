@@ -1,6 +1,8 @@
+const urlsHolder = require('../config/urls');
+
 const commonRoutes = (app) => {
   app.get("/", (req, res) => {
-    res.redirect("/media");
+    res.redirect(urlsHolder.common.main);
   });
 
   app.get("/example", (req, res) => {
@@ -8,7 +10,6 @@ const commonRoutes = (app) => {
   });
 
   app.get("/about", (req, res) => {
-    console.log(`try to return index`);
     res.send("11111");
   });
 };

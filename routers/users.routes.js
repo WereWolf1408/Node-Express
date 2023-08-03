@@ -1,5 +1,5 @@
-const userService = require('../controllers/db_connect');
 const authMiddleWare = require("../middleware/authJwt");
+const usersController = require('../controllers/users.controller');
 
 const usersRoutes = (app) => {
   app.use((req, res, next) => {
@@ -12,32 +12,15 @@ const usersRoutes = (app) => {
     res.render("users-page.html");
   });
 
-  app.get("/users/all", (req, res) => {
-    const response = userService.getAllUsers();
-    console.log(response);
-    res.send(response);
-  });
+  app.get("/users/all", usersController.getAllUsers);
 
-  app.post("/users/id", (req, res) => {
-    const { id } = req.body;
-    const user = userService.getUserById(id);
-    res.send(user);
-  });
+  app.post("/users/id", usersController.getUserById);
   
-  app.post("/users/update", (req, res) => {
-    const {id, name, age, email} = req.body;
-    const modifiedUser = userService.updateUser(id, name, age, email);
-    res.send(modifiedUser);
-  });
+  app.post("/users/update", [authMiddleWare.verifyToken], usersController.postUsersUpdate);
   
-  app.post("/users/add", (req, res) => {
-    const {id, name, age, email} = req.body;
-    const result = userService.addNewUser(id, name, age, email);
-    console.log(result);
-    res.send(result);
-  });
+  app.post("/users/add", [authMiddleWare.verifyToken], usersController.postUsersAdd);
 
-  app.post('/delete', userService.deleteUser);
+  app.post('/delete', usersController.postUsersDelete);
 
 }
 

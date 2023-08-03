@@ -9,6 +9,13 @@ const deleteUserBth = document.querySelector(".button-7");
 const listContainer = document.querySelector(".results");
 const messageInput = document.querySelector(".message");
 const logOut = document.getElementById("logout");
+const goBack = document.getElementById("go-back");
+
+
+goBack.addEventListener('click', () => {
+  window.location.href = urls.goToMainPage;
+});
+
 
 deleteUserBth?.addEventListener("click", async () => {
   const userId = document.getElementById("search").value;

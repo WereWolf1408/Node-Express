@@ -8,6 +8,7 @@ const urls = {
   autosuggestion: 'http://localhost:3000/autosuggestion',
   getAllVideosURL: 'http://localhost:3000/videos',
   deleteUser: 'http://localhost:3000/delete',
+  goToMainPage: 'http://localhost:3000/main',
 };
 
 const menuItemsData = {

@@ -1,7 +1,6 @@
-const bcryp = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth_config = require("../config/auth.config");
-import { getLoginPageType } from '../types/auth.types';
 
 const users = require('../config/users');
 
@@ -25,7 +24,8 @@ const _authenticate = (name, pass, fn) => {
   });
 };
 
-const getLoginPage: getLoginPageType = (req, res) => {
+
+const getLoginPage = (req, res) => {
   res.render("login.html");
 };
 
