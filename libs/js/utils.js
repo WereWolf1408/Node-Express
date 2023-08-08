@@ -110,9 +110,9 @@ function createEmptyInputs() {
   const inputs = [];
   const obj = {
     id: "id",
-    name: "name",
+    login: "login",
+    password: "password",
     age: "age",
-    email: "email",
   };
 
   for (const key in obj) {
@@ -134,9 +134,9 @@ const createUserObject = () => {
   const inputs = document.querySelectorAll(".results li input");
   const user = {
     id: null,
-    name: null,
+    login: null,
+    password: null,
     age: null,
-    email: null,
   };
   let i = 0;
   for (const [key, value] of Object.entries(user)) {

@@ -8,7 +8,9 @@ const commonRoutes = (app) => {
 
   app.get("/example", async (req, res) => {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({
+        attributes: ['id', 'login'],
+      });
       console.log(users);
       res.send('');
     } catch (error) {

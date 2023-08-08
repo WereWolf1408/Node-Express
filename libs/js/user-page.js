@@ -49,6 +49,10 @@ getAllUsersBth?.addEventListener("click", async () => {
     url: urls.allUsersURL,
     options: {},
   });
+
+
+  console.log(response);
+
   updateResultsMiddleWare(response);
 });
 
@@ -80,6 +84,9 @@ updateUserBth?.addEventListener("click", async () => {
         ...modifiedUser,
       },
     });
+
+    console.log(response);
+
     updateResultsMiddleWare(response);
   }
 });

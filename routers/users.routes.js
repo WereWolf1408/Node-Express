@@ -8,9 +8,7 @@ const usersRoutes = (app) => {
     next();
   });
 
-  app.get("/users", [authMiddleWare.verifyToken], (req, res) => {
-    res.render("users-page.html");
-  });
+  app.get("/users", [authMiddleWare.verifyToken], usersController.openUserPage);
 
   app.get("/users/all", usersController.getAllUsers);
 
