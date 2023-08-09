@@ -12,11 +12,13 @@ const app = express();
 app.engine("html", require("ejs").renderFile);
 app.set("views", path.join(__dirname, "../UI"));
 
+const uploadedImagePath = path.join(__dirname, "../uploads");
 const publicDirectoryPath = path.join(__dirname, "../assets");
 const picturesPublicDirectoryPath = path.join(__dirname, "../assets/pictures");
 const picsPublicDirectoryPath = path.join(__dirname, "../assets/pics");
 const clientLibs = path.join(__dirname, "../libs");
 
+app.use(express.static(uploadedImagePath));
 app.use(express.static(publicDirectoryPath));
 app.use(express.static(picturesPublicDirectoryPath));
 app.use(express.static(picsPublicDirectoryPath));

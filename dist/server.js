@@ -9,10 +9,12 @@ var app = express();
 // Set the view engine to use HTML
 app.engine("html", require("ejs").renderFile);
 app.set("views", path.join(__dirname, "../UI"));
+var uploadedImagePath = path.join(__dirname, "../uploads");
 var publicDirectoryPath = path.join(__dirname, "../assets");
 var picturesPublicDirectoryPath = path.join(__dirname, "../assets/pictures");
 var picsPublicDirectoryPath = path.join(__dirname, "../assets/pics");
 var clientLibs = path.join(__dirname, "../libs");
+app.use(express.static(uploadedImagePath));
 app.use(express.static(publicDirectoryPath));
 app.use(express.static(picturesPublicDirectoryPath));
 app.use(express.static(picsPublicDirectoryPath));
