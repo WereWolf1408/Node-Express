@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/file-upload-page.css" />
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <section class="nav-panel">
+      <form id="myForm" method="post" enctype="multipart/form-data">
+        <input type="file" name="filetoupload" multiple />
+        <button type="submit">Send</button>
+        <button type="button" class="remove-selected">Remove Selected</button>
+      </form>
+      <button id="action-button">Send</button>
+      <select id="file-actions">
+        <option value="get-all-images">Get All</option>
+        <option value="get-folder-structure">Get Folder Structure</option>
+        <option value="delete-selected">Delete Selected</option>
+      </select>
+      <button id="back">Back</button>
+    </section>
+
+    <img id="image" src="" alt="" />
+
+    <section id="upload-preview-section">
+
+    </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/file-upload-page.js"></script>
+  </body>
+</html>
