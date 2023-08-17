@@ -1,0 +1,52 @@
+.round-button {
+  width: 160px;
+  height: 60px;
+  border-radius: 9px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover animation */
+.round-button:hover {
+  background-color: #e74c3c; /* Change color on hover */
+  transform: scale(1.05); /* Add scale effect on hover */
+}
+
+/* Click animation */
+.round-button:active {
+  background-color: #2ecc71; /* Change color when clicked */
+  transform: scale(0.95); /* Add scale effect when clicked */
+}
+
+
+/* Style for the label */
+.label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Style for the input field */
+.input-field {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover effect for the input field */
+.input-field:hover {
+  border-color: #3498db;
+}
+
+/* Focus effect for the input field */
+.input-field:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+/* input */

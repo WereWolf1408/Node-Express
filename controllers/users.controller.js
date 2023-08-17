@@ -1,5 +1,5 @@
-const userService = require("../controllers/db_connect");
 const User = require("../models/users");
+const Groups = require("../models/groups");
 
 const openUserPage = (req, res) => {
   res.render("users-page.html");
@@ -8,7 +8,11 @@ const openUserPage = (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: ["id", "login", "password", "age"],
+      attributes: ["id", "login", "password", "age", "name"],
+      where: {
+        isdeleted: false,
+      },
+      include: Groups
     });
     console.log(users);
     res.status(200).send({
@@ -66,7 +70,7 @@ const postUsersUpdate = async (req, res) => {
     await userToUpdate.save();
 
     res.status(200).send({
-      message: `user ${userToUpdate.name} updated successfully`,
+      message: `user ${userToUpdate.login} updated successfully`,
       data: [
         {
           id: userToUpdate.id,
@@ -77,7 +81,6 @@ const postUsersUpdate = async (req, res) => {
       ],
     });
   } catch (error) {
-    console.log(error);
     res.status(400).send({
       message: error.message,
       data: null,
@@ -133,16 +136,6 @@ const postUsersDelete = async (req, res) => {
       data: null,
     });
   }
-
-  const deletedUser = userService.deleteUser(userId);
-
-  if (deletedUser === null) {
-    res.status(400).send({
-      message: `There is no User with such id = ${userId}`,
-    });
-  }
-
-  res.send({ message: "User deleted successfully" });
 };
 
 module.exports = {

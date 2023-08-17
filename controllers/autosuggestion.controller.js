@@ -1,7 +1,6 @@
 const users = require("../config/users");
 
 const findMatchesUsers = (username, limit) => {
-  // const filteredArrayIncludes = users.filter(({}) => item.includes(searchString));
   const result = [];
 
   for (const [, {name}] of Object.entries(users)) {
@@ -16,7 +15,6 @@ const findMatchesUsers = (username, limit) => {
 };
 
 const autosuggestion = (req, res) => {
-  console.log(`autosuggestion route`);
   const { username, limit } = req.body;
   const suggestionData = findMatchesUsers(username, limit);
   res.send({

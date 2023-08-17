@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-  <div class="login-wrapper">
-    <form id="login-form">
-      <span>Login</span>
-      <div class="username-input">
-        <input id="login" type="text">
-        <ul id="autosuggestion">
-        </ul>
-      </div>
-      <input id="pass" type="text">
-      <button type="button" class="login-bth">Log in</button>
-    </form>
-  </div>
-  <script src="js/config.js"></script>
-  <script src="js/fetch.js"></script>
-  <script src="js/login.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <form id="login-form">
+        <span>Auth</span>
+        <div class="username-input">
+          <input
+            id="login"
+            class="input-field"
+            type="text"
+            placeholder="username"
+          />
+          <ul id="autosuggestion"></ul>
+        </div>
+        <input
+          id="pass"
+          class="input-field"
+          type="text"
+          placeholder="password"
+        />
+        <button type="button" class="login-bth round-button">Log in</button>
+      </form>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="js/login.js"></script>
+  </body>
 </html>

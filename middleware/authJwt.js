@@ -17,6 +17,7 @@ const verifyToken = (req, res, next) => {
       console.warn("Unauthorized!");
       res.redirect('/login');
     }
+
     req.userId = decoded.id;
     next();
   });

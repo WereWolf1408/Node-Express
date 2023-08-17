@@ -8,8 +8,8 @@ const addEmptyInputsBth = document.querySelector(".button-6");
 const deleteUserBth = document.querySelector(".button-7");
 const listContainer = document.querySelector(".results");
 const messageInput = document.querySelector(".message");
-const logOut = document.getElementById("logout");
 const goBack = document.getElementById("go-back");
+const logoutBth = document.getElementById('logout');
 
 
 goBack.addEventListener('click', () => {
@@ -31,7 +31,7 @@ deleteUserBth?.addEventListener("click", async () => {
   }
 });
 
-logOut?.addEventListener("click", async () => {
+logoutBth?.addEventListener("click", async () => {
   console.log(`logout click`);
   let result = await logout({
     url: urls.logout,

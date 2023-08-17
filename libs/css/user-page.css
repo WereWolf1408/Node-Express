@@ -3,20 +3,12 @@
   grid-template-columns: 1fr;
 }
 
+.active_section {
+  margin: 0 20px;
+}
+
 div[class*="place-"] {
-  display: none;
   margin-top: 20px;
-  border: 2px solid red;
-}
-
-.active {
-  display: grid !important;
-}
-
-.place-1 {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 160px 1fr 60px;
-  padding: 10px;
 }
 
 .place-1 .title {
@@ -31,7 +23,6 @@ div[class*="place-"] {
 }
 
 .place-1 .bth-group {
-  grid-column-start: span 3;
   display: flex;
   gap: 10px;
   margin-top: 10px;
@@ -44,8 +35,6 @@ div[class*="place-"] {
   margin: 0;
   gap: 10px;
   list-style: none;
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
 }
 
 .results ul li {
@@ -53,10 +42,16 @@ div[class*="place-"] {
   flex-direction: column;
 }
 
-#go-back {
-  width: fit-content;
-  padding: 20px;
-  border: 2px solid red;
-  border-radius: 20px;
-  cursor: pointer;
+.results li .input-field:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/*button !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* input !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Style for the form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }

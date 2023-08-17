@@ -87,6 +87,7 @@ function createListWithInputs(data) {
       const input = document.createElement("input");
       input.setAttribute("type", "text");
       input.setAttribute("value", obj[key]);
+      input.className = 'input-field';
       inputs.push(input);
     }
 
@@ -109,7 +110,6 @@ function createEmptyInputs() {
   const listItem = document.createElement("li");
   const inputs = [];
   const obj = {
-    id: "id",
     login: "login",
     password: "password",
     age: "age",
@@ -118,6 +118,7 @@ function createEmptyInputs() {
   for (const key in obj) {
     const input = document.createElement("input");
     input.setAttribute("placeholder", obj[key]);
+    input.className = 'input-field';
     inputs.push(input);
   }
 

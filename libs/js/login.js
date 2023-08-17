@@ -40,17 +40,17 @@ userNameInp?.addEventListener("input", async (event) => {
 });
 
 loginBth?.addEventListener("click", async () => {
-  const username = userNameInp.value;
+  const login = userNameInp.value;
   const password = passwordInp.value;
 
-  console.log(`login =  ${username}, password = ${password}`);
+  console.log(`login =  ${login}, password = ${password}`);
 
-  if (username.trim().length > 0 && password.trim().length > 0) {
+  if (login.trim().length > 0 && password.trim().length > 0) {
     const { accessToken, message } = await loginService({
       url: urls.login,
       data: {
-        username: username,
-        password: password,
+        login,
+        password,
       },
     });
 
