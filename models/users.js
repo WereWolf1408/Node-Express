@@ -23,16 +23,6 @@ const Users = sequelize.define(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-
-    groupid: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "groups",
-        key: "id",
-      },
-      onUpdate: "CASCADE",
-      onDelete: "CASCADE",
-    },
   },
   { timestamps: false }
 );

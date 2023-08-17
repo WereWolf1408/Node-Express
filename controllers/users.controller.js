@@ -8,11 +8,16 @@ const openUserPage = (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: ["id", "login", "password", "age", "name"],
+      attributes: ["id", "login", "password", "age"],
       where: {
         isdeleted: false,
       },
-      include: Groups
+      include: [
+        {
+          model: Groups,
+          attributes: ["name"], // Include the 'name' attribute from the Groups table
+        },
+      ],
     });
     console.log(users);
     res.status(200).send({

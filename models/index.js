@@ -4,9 +4,7 @@ const sequelize = require("../db");
 
 // Sync the models with the database
 Users.belongsTo(Groups);
-Groups.hasMany(Users, {
-  foreignKey: "groupId",
-});
+Groups.hasMany(Users);
 
 (async () => {
   try {

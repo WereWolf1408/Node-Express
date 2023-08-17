@@ -27,7 +27,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-//sync data base data
+//sync data base models
 require('./models'); 
 
 require("./routers/auth.routes")(app);
