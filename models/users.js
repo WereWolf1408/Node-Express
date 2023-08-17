@@ -1,8 +1,6 @@
 const sequelize = require("../db");
 const { DataTypes } = require("sequelize");
 
-const Groups = require('./groups');
-
 const Users = sequelize.define(
   "users",
   {
@@ -25,15 +23,18 @@ const Users = sequelize.define(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+
+    groupid: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "groups",
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "CASCADE",
+    },
   },
   { timestamps: false }
 );
-
-Users.belongsTo(Groups);
-Groups.hasMany(Users);
-
-(async () => {
-  await sequelize.sync(); // Sync the models with the database
-})();
 
 module.exports = Users;

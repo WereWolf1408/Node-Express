@@ -21,6 +21,8 @@ app.use(express.static(picsPublicDirectoryPath));
 app.use(express.static(clientLibs));
 app.use(express.json());
 app.use(cookieParser());
+//sync data base data
+require('./models');
 require("./routers/auth.routes")(app);
 require("./routers/common.routes")(app);
 require("./routers/users.routes")(app);
